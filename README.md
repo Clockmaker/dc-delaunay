@@ -1,6 +1,6 @@
 # Divide and Conquer Delaunay Triangulation
 
-![triangulation's example](../master/demo.gif?raw=true =400x)
+![triangulation's example](https://raw.githubusercontent.com/Clockmaker/dc-delaunay/master/demo.gif =400x)
 ***
 
 
