@@ -8,7 +8,7 @@
 
 
 ## Code Example
-```
+```javascript
   var model = new Mesh([14,49,0,24,14,0,42,0,56,24,42,49]);
   model.delaunay();
 ```
@@ -20,7 +20,6 @@ WIP
 WIP
 
 # Known Bugs
-=======
 - Can't handle duplicated points inside the triangulation;
 - Slow recursion;
 
@@ -40,7 +39,6 @@ Communications of the ACM, Vol.20, pp.87--93, 1977.
 Links & Resources
 -----
 [J.R. Shewchuk's papers](https://people.eecs.berkeley.edu/~jrs/jrspapers.html)
-<<<<<<< HEAD
 [Triangle: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator](http://www.cs.cmu.edu/~quake/tripaper/triangle0.html)
-=======
->>>>>>> origin/master
+
+
