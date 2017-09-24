@@ -17,7 +17,7 @@ WIP
 WIP
 
 # Known Bugs
-- Can't handle duplicated points inside the triangulation
+- Can't handle duplicated points inside the triangulation;
 - Slow recursion (more a javascript's problem);
 
 ### Todo
