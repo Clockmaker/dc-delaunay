@@ -2,8 +2,22 @@
 
 ![triangulation's example](../master/demo.gif)
 ***
+[Demo Page](https://clockmaker.github.io/dc-delaunay/)
 
+## Constrained Delaunay Triangulation
+WIP
 
+## Mesh Refinement
+WIP
+
+# Known Bugs
+- Can't handle duplicated points inside the triangulation
+- Slow recursion (caused by js);
+
+### Todo
+- Completing the SVG's support ("path" and splines);
+- Cleaning input points;
+- Tail-Call Optimization;
 
 References
 ==========
