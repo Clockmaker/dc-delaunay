@@ -1,8 +1,11 @@
 # Divide and Conquer Delaunay Triangulator
 
 ![triangulation's example](../master/demo.gif)
+
 ***
-[Demo Page](https://clockmaker.github.io/dc-delaunay/)
+
+[**Demo Page**](https://clockmaker.github.io/dc-delaunay/)
+
 
 ## Code Example
 ```
@@ -17,8 +20,13 @@ WIP
 WIP
 
 # Known Bugs
+<<<<<<< HEAD
 - Can't handle duplicated points inside the triangulation;
 - Slow recursion (more a javascript's problem);
+=======
+- Can't handle duplicated points inside the triangulation
+- Slow recursion;
+>>>>>>> origin/master
 
 ### Todo
 - Completing the SVG's support ("path" and splines);
@@ -36,4 +44,7 @@ Communications of the ACM, Vol.20, pp.87--93, 1977.
 Links & Resources
 -----
 [J.R. Shewchuk's papers](https://people.eecs.berkeley.edu/~jrs/jrspapers.html)
+<<<<<<< HEAD
 [Triangle: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator](http://www.cs.cmu.edu/~quake/tripaper/triangle0.html)
+=======
+>>>>>>> origin/master
