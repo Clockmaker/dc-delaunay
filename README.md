@@ -1,8 +1,11 @@
 # Divide and Conquer Delaunay Triangulation
 
 ![triangulation's example](../master/demo.gif)
+
 ***
-[Demo Page](https://clockmaker.github.io/dc-delaunay/)
+
+[**Demo Page**](https://clockmaker.github.io/dc-delaunay/)
+
 
 ## Constrained Delaunay Triangulation
 WIP
@@ -12,7 +15,7 @@ WIP
 
 # Known Bugs
 - Can't handle duplicated points inside the triangulation
-- Slow recursion (caused by js);
+- Slow recursion;
 
 ### Todo
 - Completing the SVG's support ("path" and splines);
