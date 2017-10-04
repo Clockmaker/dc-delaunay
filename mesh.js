@@ -1,11 +1,12 @@
 /**
- *
- * Performance guideline:
- * swap slow...
+ * Mesh.js
+ * 
+ * Performance Guidelines:
+ * - use xor swap
  * - avoid .shift() operation;
- * - avoid .reverse(), or similar, entirely, invert the loop directly;
- * deep recursion is slow in javascript 
- * stack hard to debug
+ * - avoid .reverse() entirely;
+ * - deep recursion is slow 
+ * 
  *
  */
 "use strict";
@@ -214,13 +215,18 @@ class Mesh {
   }
 
   /**
-   * Splits the convexhull in half; 
+   * "Split" is no longer the proper name, but it was previously
+   * used to cut the hull in half.
+   * Now the function is used to "open" the hull cutting the chain at the
+   * right/left-most node.
+   * TODO: refactoring to openHull or cutHull. 
+   * 
    * nodes are listed always in counter-clockwise direction.
    * 
-   * Side = 0 left  half
-   *      = 1 right half
+   * Side = 0 leftmost
+   *      = 1 rightmost
    *
-   * Critical for the search of the correct bottom tangent.
+   * Critical for the search of the bottom tangent.
    */
   splitHull(set, side) {
     if (set.length > 3) {
@@ -228,25 +234,8 @@ class Mesh {
       if(dw[1] == up[up.length-1] ){
         //aligned by x-y direction
         return side?[dw[0],up[0]]:[up[0],dw[0]];
-        /*
-        if(this.points[2*up[0]] == this.points[2*dw[0]]){
-          //vertical
-          //half = up.concat(dw[0]);
-          half = [up[0],dw[0]];
-        }else{
-        //horizontal
-          if(side){//rightmost
-            half = dw[0];//.concat(up[0]);
-          }else{//leftmost
-            half = up[0];//.concat(dw[0]);
-          }
-          //if(side){
-          //}else{
-            //half = up.concat(dw[0]);
-          //}
-        }
-        */
-      }else{ 
+      }else{
+        // convex hull chain
         return side
              ? up.concat(dw,up[0])
              : dw.concat(up);
