@@ -42,4 +42,3 @@ Links & Resources
 
 [Triangle: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator](http://www.cs.cmu.edu/~quake/tripaper/triangle0.html)
 
-
