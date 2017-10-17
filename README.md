@@ -9,7 +9,7 @@
 
 ## Code Example
 ```javascript
-  var model = new Mesh([14,49,0,24,14,0,42,0,56,24,42,49]);
+  var model = new Mesh();
   model.delaunay();
 ```
 
@@ -25,7 +25,6 @@ WIP
 
 ### Todo
 - Completing the SVG's support (path and splines);
-- Cleaning input points;
 - Tail-Call Optimization;
 
 References
@@ -36,7 +35,7 @@ Int.J.Computer and Information Sciences, Vol.9, No.3, 1980.
 - F. Preparata and S.J. Hong, "Convex Hulls of Finite Sets of Points in Two and Three Dimensions". 
 Communications of the ACM, Vol.20, pp.87--93, 1977.
 
-Links & Resources
+Useful Links
 -----
 [J.R. Shewchuk's papers](https://people.eecs.berkeley.edu/~jrs/jrspapers.html)
 
