@@ -46,6 +46,7 @@ class Mesh {
   getInfo(){
     return {"points": this.length,"time": this.time,}
   }
+
   /* PRIMITIVE */
 
   /**
@@ -84,7 +85,7 @@ class Mesh {
     return det > 0;
     }
     */
-    //Collinear points: circle radius tend to infty
+    //Collinear points
     if ((x1 == x2 && x2 == x3) || (y1 == y2 && y2 == y3)) return 1;
     /* D.Pedoe, Circles: A Mathematical View, rev.ed.Washington, DC: Math.Assoc.Amer., 1995. */
     var l1 = x1 * x1 + y1 * y1,
@@ -104,12 +105,9 @@ class Mesh {
     return x0 * x0 + y0 * y0 - c / a > dx * dx + dy * dy;
   }
   /**
-   * QuickSort
-   *
-   * Based on:
-   * T.H. Cormen, C.E. Leiserson, R.L. Rivest and C. Stein.
-   * "Introduction to Algorithms" (3rd ed.).
-   * The MIT Press, p.171, 2009.
+   * QuickSort, based on:
+   *  T.H. Cormen, C.E. Leiserson, R.L. Rivest and C. Stein.
+   *  "Introduction to Algorithms", p.171
    */
   qsort(array, from, to, compare){
     //TODO: insertion sort from set below N points
@@ -192,9 +190,8 @@ class Mesh {
    * Returns the convex hull in counterclockwise order,
    * splitted in the top and bottom half.
    *
-   * Based on:
-   * A.M. Andrew. "Another Efficient Algorithm for Convex Hulls in Two Dimensions".
-   * 1979.
+   *  based on:
+   *  A.M. Andrew. "Another Efficient Algorithm for Convex Hulls in Two Dimensions" 1979.
    */
   convexHull(node) {
     var upper = [],
@@ -202,11 +199,11 @@ class Mesh {
     for (var i = 0, j=node.length-1; i < node.length; i++, j--) {
       while(lower.length >= 2 
         && this.CCW(lower[lower.length-2], lower[lower.length-1], node[i]) < 0
-      ){lower.pop();}
+        ){ lower.pop(); }
       lower.push(node[i]);
       while(upper.length >= 2 
         && this.CCW(upper[upper.length-2], upper[upper.length-1], node[j]) < 0
-      ){upper.pop();}
+        ){ upper.pop(); }
       upper.push(node[j]);
     }
     lower.pop();
@@ -215,18 +212,13 @@ class Mesh {
   }
 
   /**
-   * "Split" is no longer the proper name, but it was previously
-   * used to cut the hull in half.
-   * Now the function is used to "open" the hull cutting the chain at the
-   * right/left-most node.
-   * TODO: refactoring to openHull or cutHull. 
-   * 
-   * nodes are listed always in counter-clockwise direction.
+   * Split the ConvexHull in half (vertically);
+   * nodes are listed in the counter-clockwise direction.
    * 
    * Side = 0 leftmost
    *      = 1 rightmost
    *
-   * Critical for the search of the bottom tangent.
+   * Critical in the search of the bottom tangent.
    */
   splitHull(set, side) {
     if (set.length > 3) {
@@ -286,10 +278,10 @@ class Mesh {
     rightHull = this.splitHull(right,0);
     //Bottom Tangent Search
     /**
-     * Based on:
-     * F. Preparata & S.J. Hong,
-     * "Convex Hulls of Finite Sets of Points in Two and Three Dimensions".
-     * Communications of the ACM, Vol.20, pp.87--93, 1977.
+     *  based on:
+     *  F. Preparata & S.J. Hong,
+     *  "Convex Hulls of Finite Sets of Points in Two and Three Dimensions".
+     *  Communications of the ACM, Vol.20, pp.87--93, 1977.
      */
     var r = 0, l = leftHull.length-1;
     var baseL=leftHull[l], baseR=rightHull[0];
@@ -401,7 +393,7 @@ class Mesh {
   /**
    * Delaunay Triangulation: Divide&Conquer Algorithm.
    *
-   *  Based on:
+   *  based on:
    *   D.T. Lee and B.J. Schachter,
    *  "Two Algorithms for Constructing a Delaunay Triangulation".
    *   Int.J.Computer and Information Sciences, Vol.9, No.3, 1980.
