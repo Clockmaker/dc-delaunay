@@ -109,20 +109,19 @@ class Mesh {
    *  T.H. Cormen, C.E. Leiserson, R.L. Rivest and C. Stein.
    *  "Introduction to Algorithms", p.171
    */
-  qsort(array, from, to, compare){
+  qsort(array, from, to, fn_compare){
     //TODO: insertion sort from set below N points
     if (from < to) {
       var pivot = array[to];
       for (var R = from, L=from; R <= to; R++) {
-        if (compare(array[R], pivot)){
+        if (fn_compare(array[R], pivot)){
           [array[R], array[L]] = [array[L], array[R]]
           L++;
         }
       }
       [array[L], array[to]] = [array[to], array[L]]
-      //console.log(array);
-      return this.qsort(array, from, L - 1, compare)
-      && this.qsort(array, L + 1, to, compare);
+      return this.qsort(array, from, L - 1, fn_compare)
+      && this.qsort(array, L + 1, to, fn_compare);
     }
     return array;
   }
