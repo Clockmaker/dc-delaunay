@@ -42,6 +42,7 @@ class Mesh {
           (this.points[2*a] == this.points[2*b] && this.points[2*a+1] > this.points[2*b+1]));
     });
     console.timeEnd("sort")
+    console.timeEnd("Xsort");
   }
   getInfo(){
     return {"points": this.length,"time": this.time,}
